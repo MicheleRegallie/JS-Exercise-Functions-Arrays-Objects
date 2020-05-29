@@ -240,10 +240,14 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoByIndex(inventory, index) {
-  /* code here */
+/* function getCarInfoByIndex(inventory, index) {
+   code here
+  let carInventory = module.exports[0].car_make
+  let carModel = module.exports[0].car_model
+  return `The is a ${carInventory} ${carModel}`
 }
-
+console.log(getCarInfoByIndex())*/
+//I am not understanding this concept, and can not properly access the data
 /**
  * ### Challenge `getLastCarInfo`
  * 
