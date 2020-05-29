@@ -126,9 +126,17 @@ console.log(makePersonObject())
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+
+function getName(person) {
   /* code here */
+  return `Hello, my name is ${person.name}`
 }
+const person ={
+  id: 1,
+  name: 'Leia',
+  email: 'leia@leia.com'
+}
+console.log(getName(person))
 
 
 /**
@@ -146,9 +154,12 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
+function appleIndex(fruit) {
   /* code here */
+  fruit = ['orange', 'grape', 'apple', 'banana', 'mango']
+  return fruit[2]
 }
+console.log(appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']))
 
 /**
  * ### Challenge `isItAnApple`
