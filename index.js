@@ -79,10 +79,12 @@ console.log(temperatureCtoF(24));
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
+//function temperatureInF(f || c) {
   /* code here */
-}
-
+//  return Math.round(C = (5/9) * (F - 32));
+//  temperatureCtoF();
+//}
+//I don't understand this one
 
 /**
  * ### Challenge `makePersonObject`
@@ -100,10 +102,17 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject() {
   /* code here */
+  let personObject ={
+    id: 3,
+    name: "Han",
+    email: "han@solo.com",
+  }
+  return personObject
 }
-
+console.log(makePersonObject())
+//not entirely sure if this is correct
 /**
  * ### Challenge `getName`
  * 
