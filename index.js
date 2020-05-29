@@ -178,9 +178,16 @@ console.log(appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']))
 */
 function isItAnApple(/* code here */) {
   /* code here */
+  fruit = ['orange', 'grape', 'apple', 'banana', 'mango']
+  if (fruit.length === 'apple'){
+    console.log(true)
+  }else{
+    console.log(false)
+  }
+    return fruit
 }
-
-
+console.log(isItAnApple(['orange', 'grape', 'apple', 'banana', 'mango']))
+//This challenge is incorrect
 
 
 // ⭐️ Example Test Data ⭐️
