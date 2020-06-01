@@ -240,14 +240,14 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
-/* function getCarInfoByIndex(inventory, index) {
-   code here
-  let carInventory = module.exports[0].car_make
-  let carModel = module.exports[0].car_model
-  return `The is a ${carInventory} ${carModel}`
+const array = require ("./data/inventory");
+function getCarInfoByIndex(inventory, index) {
+  let carIndex = inventory[0].car_make;
+  let carInfo = inventory[0].car_model;
+  return `The is a + ${carIndex} ${carInfo} ` ;
 }
-console.log(getCarInfoByIndex())*/
-//I am not understanding this concept, and can not properly access the data
+console.log(getCarInfoByIndex())
+//I am not understanding this concept (and what to console.log), and can not properly access the data
 /**
  * ### Challenge `getLastCarInfo`
  * 
@@ -259,9 +259,12 @@ console.log(getCarInfoByIndex())*/
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(lastCar) {
+  let finalMake = inventory[inventory.length -1].car_make;
+  let finalModel = inventory[inventory.length -1].car_model;
+  return `This is a + ${finalMake} ${finalModel}`;
 }
+console.log(getLastCarInfo());
 
 /**
  * ### Challenge `getModelYears`
@@ -272,10 +275,13 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(years) {
+  for (let i = 0; i < inventory.length; i++){
+    if (inventory[i.car_year] !== undefined)
+    console.log(inventory[i.car_year]);
+  }
 }
-
+ console.log(getModelYears(year));
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
