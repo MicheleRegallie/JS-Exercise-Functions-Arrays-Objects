@@ -22,8 +22,10 @@ function addNumbers(num1, num2) {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
-
-
+function addNumbers(this1, this2){
+  return this1 + this2;
+}
+console.log(addNumbers(6, 10));
 /**
  * ### Challenge `sayGoodbye`
  * 
@@ -36,9 +38,10 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+function sayGoodbye(name) {
+  return `Goodbye, ${name}. Have a great day`;
 }
+console.log(sayGoodbye("Michele"));
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -54,10 +57,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
+function temperatureCtoF(t) {
   /* code here */
+  return Math.round(t * 9/5 + 32);
 }
-
+console.log(temperatureCtoF(24));
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -75,10 +79,12 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
+//function temperatureInF(f || c) {
   /* code here */
-}
-
+//  return Math.round(C = (5/9) * (F - 32));
+//  temperatureCtoF();
+//}
+//I don't understand this one
 
 /**
  * ### Challenge `makePersonObject`
@@ -96,10 +102,17 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject() {
   /* code here */
+  let personObject ={
+    id: 3,
+    name: "Han",
+    email: "han@solo.com",
+  }
+  return personObject
 }
-
+console.log(makePersonObject())
+//not entirely sure if this is correct
 /**
  * ### Challenge `getName`
  * 
@@ -113,9 +126,17 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+
+function getName(person) {
   /* code here */
+  return `Hello, my name is ${person.name}`
 }
+const person ={
+  id: 1,
+  name: 'Leia',
+  email: 'leia@leia.com'
+}
+console.log(getName(person))
 
 
 /**
@@ -133,9 +154,12 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
+function appleIndex(fruit) {
   /* code here */
+  fruit = ['orange', 'grape', 'apple', 'banana', 'mango']
+  return fruit[2]
 }
+console.log(appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']))
 
 /**
  * ### Challenge `isItAnApple`
@@ -154,9 +178,16 @@ function appleIndex(/* code here */) {
 */
 function isItAnApple(/* code here */) {
   /* code here */
+  fruit = ['orange', 'grape', 'apple', 'banana', 'mango']
+  if (fruit.length === 'apple'){
+    console.log(true)
+  }else{
+    console.log(false)
+  }
+    return fruit
 }
-
-
+console.log(isItAnApple(['orange', 'grape', 'apple', 'banana', 'mango']))
+//This challenge is incorrect
 
 
 // ⭐️ Example Test Data ⭐️
@@ -209,10 +240,14 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
+const array = require ("./data/inventory");
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  let carIndex = inventory[0].car_make;
+  let carInfo = inventory[0].car_model;
+  return `The is a + ${carIndex} ${carInfo} ` ;
 }
-
+console.log(getCarInfoByIndex())
+//I am not understanding this concept (and what to console.log), and can not properly access the data
 /**
  * ### Challenge `getLastCarInfo`
  * 
@@ -224,9 +259,12 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(lastCar) {
+  let finalMake = inventory[inventory.length -1].car_make;
+  let finalModel = inventory[inventory.length -1].car_model;
+  return `This is a + ${finalMake} ${finalModel}`;
 }
+console.log(getLastCarInfo());
 
 /**
  * ### Challenge `getModelYears`
@@ -237,10 +275,13 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(years) {
+  for (let i = 0; i < inventory.length; i++){
+    if (inventory[i.car_year] !== undefined)
+    console.log(inventory[i.car_year]);
+  }
 }
-
+ console.log(getModelYears(year));
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
